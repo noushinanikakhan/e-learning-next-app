@@ -1,40 +1,35 @@
 // components/Testimonials.jsx
 import React from 'react';
-import Image from 'next/image';
 
 const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Sarah Johnson",
+      name: "Sarah Beckham",
       course: "Web Development Bootcamp",
       rating: 5,
-      text: "Ocean Academy transformed my career! The practical projects and mentor support helped me land my first developer job within 3 months.",
-      avatar: "/assets/student1.jpg" // Replace with actual image path
+      text: "Ocean Academy transformed my career! The practical projects and mentor support helped me land my first developer job within 3 months."
     },
     {
       id: 2,
-      name: "Mike Chen",
+      name: "Mike wilson",
       course: "Data Science Mastery",
       rating: 5,
-      text: "The instructors are amazing! Complex concepts made simple. I went from beginner to building ML models in just 6 months.",
-      avatar: "/assets/student2.jpg" // Replace with actual image path
+      text: "The instructors are amazing! Complex concepts made simple. I went from beginner to building ML models in just 6 months. I hope for the best for Ocean Academy"
     },
     {
       id: 3,
-      name: "Priya Sharma",
+      name: "Pouline Jackson",
       course: "Digital Marketing Pro",
       rating: 5,
-      text: "Flexible learning schedule and real-world projects helped me balance my job while upgrading my skills. Highly recommended!",
-      avatar: "/assets/student3.jpg" // Replace with actual image path
+      text: "Flexible learning schedule and real-world projects helped me balance my job while upgrading my skills. Highly recommended!"
     },
     {
       id: 4,
-      name: "David Wilson",
+      name: "David Jacobs",
       course: "UI/UX Design Specialization",
       rating: 5,
-      text: "The certificate from Ocean Academy was recognized by top companies. I received multiple job offers after completion.",
-      avatar: "/assets/student4.jpg" // Replace with actual image path
+      text: "The certificate from Ocean Academy was recognized by top companies. I received multiple job offers after completion."
     }
   ];
 
@@ -83,13 +78,10 @@ const Testimonials = () => {
 
               {/* Student Info */}
               <div className="flex items-center">
-                <div className="relative w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
-                  <Image
-                    src={testimonial.avatar}
-                    alt={testimonial.name}
-                    fill
-                    className="object-cover"
-                  />
+                <div className="w-12 h-12 rounded-full bg-[#0c324a] flex items-center justify-center mr-4">
+                  <span className="text-white font-semibold text-lg">
+                    {testimonial.name.split(' ').map(n => n[0]).join('')}
+                  </span>
                 </div>
                 <div>
                   <h4 className="font-semibold text-[#0c324a]">{testimonial.name}</h4>
