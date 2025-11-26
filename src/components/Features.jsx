@@ -3,8 +3,11 @@ import Image from 'next/image';
 
 async function getFeaturedCourses() {
   try {
-    const res = await fetch('http://localhost:3000/api/courses', {
-      next: { revalidate: 3600 } // Revalidate every hour
+  //   const res = await fetch('http://localhost:3000/api/courses', {
+  //     next: { revalidate: 3600 } // Revalidate every hour
+  //   });
+    const res = await fetch(`${process.env.NEXTAUTH_URL || 'http://localhost:3000'}/api/courses`, {
+      cache: 'no-store' // Or keep revalidate if you prefer
     });
     
     if (!res.ok) {
