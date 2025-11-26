@@ -29,6 +29,12 @@ export default function AddCousePage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+      // ✅ Price validation here
+  if (!formData.price || isNaN(parseFloat(formData.price))) {
+    alert("Invalid price");
+    setLoading(false);
+    return;
+  }
 
     try {
       const response = await fetch('/api/courses', {

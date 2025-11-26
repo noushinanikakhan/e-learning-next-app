@@ -137,13 +137,16 @@ export default function CoursesPage() {
                 {/* Course Image */}
                 <div className="p-4 flex-shrink-0">
                   <div className="relative h-48 w-full rounded-lg overflow-hidden">
-                 {course.imageUrl && (
-  <Image
+               {course.imageUrl ? (
+  <img
     src={course.imageUrl}
     alt={course.title}
-    fill
-    className="object-cover"
+    className="object-cover w-full h-full"
   />
+) : (
+  <div className="w-full h-full bg-gray-200 flex items-center justify-center text-gray-500 text-sm">
+    No Image
+  </div>
 )}
 
                     <div className="absolute top-3 right-3">
