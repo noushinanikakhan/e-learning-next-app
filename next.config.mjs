@@ -2,15 +2,28 @@
 const nextConfig = {
   reactCompiler: true,
   images: {
-    domains: ['i.ibb.co.com', 'i.ibb.co', 'picsum.photos', 'images.unsplash.com'],
+    // use remotePatterns instead of deprecated `domains`
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'i.ibb.co',          // ✅ keep this
+      },
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
     formats: ['image/webp', 'image/avif'],
   },
-  experimental: {
-    esmExternals: 'loose'
-  }
+  // ❌ removed `experimental.esmExternals: 'loose'`
 };
 
 export default nextConfig;
+
 
 // /** @type {import('next').NextConfig} */
 // const nextConfig = {
