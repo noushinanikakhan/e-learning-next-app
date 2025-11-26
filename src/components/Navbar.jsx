@@ -54,10 +54,26 @@ const Navbar = () => {
               </li>
                        <li>
               <Link
-                href="/details"
+                href="/join"
                 className="text-gray-300 hover:text-white text-lg"
               >
-                Course Details
+                Join Us
+              </Link>
+            </li>
+             <li>
+              <Link
+                href="/add"
+                className="text-gray-300 hover:text-white text-lg"
+              >
+                Add Course
+              </Link>
+            </li>
+             <li>
+              <Link
+                href="/manage"
+                className="text-gray-300 hover:text-white text-lg"
+              >
+                Manage Course
               </Link>
             </li>
             </ul>
@@ -106,10 +122,26 @@ const Navbar = () => {
             </li>
               <li>
               <Link
-                href="/details"
+                href="/join"
                 className="text-gray-300 hover:text-white text-lg"
               >
-                Course Details
+                Join Us
+              </Link>
+            </li>
+                        <li>
+              <Link
+                href="/add"
+                className="text-gray-300 hover:text-white text-lg"
+              >
+                Add Course
+              </Link>
+            </li>
+             <li>
+              <Link
+                href="/manage  "
+                className="text-gray-300 hover:text-white text-lg"
+              >
+                Manage Course
               </Link>
             </li>
           </ul>

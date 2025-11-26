@@ -137,12 +137,15 @@ export default function CoursesPage() {
                 {/* Course Image */}
                 <div className="p-4 flex-shrink-0">
                   <div className="relative h-48 w-full rounded-lg overflow-hidden">
-                    <Image
-                      src={course.imageUrl || "https://picsum.photos/400/300?random=1"}
-                      alt={course.title}
-                      fill
-                      className="object-cover"
-                    />
+                 {course.imageUrl && (
+  <Image
+    src={course.imageUrl}
+    alt={course.title}
+    fill
+    className="object-cover"
+  />
+)}
+
                     <div className="absolute top-3 right-3">
                       <span className="bg-[#b3d9ff] text-[#0c324a] px-3 py-1 rounded-full text-sm font-semibold">
                         {course.level}

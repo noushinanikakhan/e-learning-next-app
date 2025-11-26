@@ -5,3 +5,14 @@ const nextConfig = {
 };
 
 export default nextConfig;
+
+
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   reactCompiler: true,
+//   images: {
+//     domains: ['picsum.photos', 'i.pravatar.cc'],
+//   },
+// };
+
+// export default nextConfig;

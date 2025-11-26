@@ -58,13 +58,14 @@ export default async function DetailsPage({ params }) {
 
       {/* Rest of your component remains the same */}
       <div className="relative h-96 w-full">
-        <Image
-          src={course.imageUrl || "https://picsum.photos/1200/400"}
-          alt={course.title}
-          fill
-          className="object-cover"
-          priority
-        />
+       {course.imageUrl && (
+  <Image
+    src={course.imageUrl}
+    alt={course.title}
+    fill
+    className="object-cover"
+  />
+)}
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       </div>
 
