@@ -1,16 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
   reactCompiler: true,
   images: {
-    domains: [ 'i.ibb.co.com'],
-        formats: ['image/webp', 'image/avif'],
-
+    domains: ['i.ibb.co.com', 'i.ibb.co', 'picsum.photos', 'images.unsplash.com'],
+    formats: ['image/webp', 'image/avif'],
   },
+  experimental: {
+    esmExternals: 'loose'
+  }
 };
 
 export default nextConfig;
-
 
 // /** @type {import('next').NextConfig} */
 // const nextConfig = {

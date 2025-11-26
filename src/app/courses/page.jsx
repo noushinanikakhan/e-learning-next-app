@@ -136,25 +136,24 @@ export default function CoursesPage() {
               >
                 {/* Course Image */}
                 <div className="p-4 flex-shrink-0">
-                  <div className="relative h-48 w-full rounded-lg overflow-hidden">
-               {course.imageUrl ? (
-  <img
-    src={course.imageUrl}
-    alt={course.title}
-    className="object-cover w-full h-full"
-  />
-) : (
-  <div className="w-full h-full bg-gray-200 flex items-center justify-center text-gray-500 text-sm">
-    No Image
-  </div>
-)}
-
-                    <div className="absolute top-3 right-3">
-                      <span className="bg-[#b3d9ff] text-[#0c324a] px-3 py-1 rounded-full text-sm font-semibold">
-                        {course.level}
-                      </span>
-                    </div>
-                  </div>
+        <div className="relative h-48 w-full rounded-lg overflow-hidden bg-gradient-to-br from-blue-50 to-gray-100">
+  {course.imageUrl ? (
+    <img
+      src={course.imageUrl}
+      alt={course.title}
+      className="w-full h-full object-cover"
+    />
+  ) : (
+    <div className="w-full h-full flex items-center justify-center">
+      <div className="text-center">
+        <div className="w-10 h-10 bg-[#0c324a] rounded-full flex items-center justify-center mx-auto mb-2">
+          <span className="text-white text-sm font-bold">OA</span>
+        </div>
+        <span className="text-gray-500 text-xs">No Image</span>
+      </div>
+    </div>
+  )}
+</div>
                 </div>
 
                 {/* Course Content */}

@@ -58,15 +58,23 @@ export default async function FeaturedCourses() {
             >
               {/* Course Image with Padding */}
               <div className="p-4 flex-shrink-0"> {/* ← Added flex-shrink-0 */}
-                <div className="relative h-48 w-full rounded-lg overflow-hidden">
-                  {course.imageUrl && (
-                  <Image
-                    src={course.imageUrl || "https://picsum.photos/400/300?random=1"}
-                    alt={course.title}
-                    fill
-                    className="object-cover"
-                  />
-                  )}
+          // With this:
+<div className="relative h-48 w-full rounded-lg overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
+  {course.imageUrl ? (
+    <img
+      src={course.imageUrl}
+      alt={course.title}
+      className="w-full h-full object-cover"
+    />
+  ) : (
+    <div className="text-center">
+      <div className="w-12 h-12 bg-[#0c324a] rounded-full flex items-center justify-center mx-auto mb-2">
+        <span className="text-white font-bold">OA</span>
+      </div>
+      <span className="text-gray-500 text-sm">Course Image</span>
+    </div>
+  )}
+
                   <div className="absolute top-3 right-3">
                     <span className="bg-[#b3d9ff] text-[#0c324a] px-3 py-1 rounded-full text-sm font-semibold">
                       {course.level}

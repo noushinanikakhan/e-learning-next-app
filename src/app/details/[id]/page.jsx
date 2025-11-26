@@ -66,26 +66,26 @@ export default async function DetailsPage({ params }) {
               <p className="text-xl text-gray-600 mb-6">{course.shortDescription}</p>
               
               {/* Course Image - Contained within white space */}
-              <div className="rounded-2xl overflow-hidden shadow-lg mb-6">
-                {course.imageUrl ? (
-                  <div className="relative h-120 w-full">
-                    <img
-                      src={course.imageUrl}
-                      alt={course.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                ) : (
-                  <div className="h-80 bg-gradient-to-br from-blue-50 to-gray-100 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-[#0c324a] rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span className="text-white text-xl font-bold">OA</span>
-                      </div>
-                      <span className="text-gray-500">Course Image</span>
-                    </div>
-                  </div>
-                )}
-              </div>
+         <div className="rounded-2xl overflow-hidden shadow-lg mb-6">
+  {course.imageUrl ? (
+    <div className="h-80 w-full">
+      <img
+        src={course.imageUrl}
+        alt={course.title}
+        className="w-full h-full object-cover"
+      />
+    </div>
+  ) : (
+    <div className="h-80 bg-gradient-to-br from-blue-50 to-gray-100 flex items-center justify-center">
+      <div className="text-center">
+        <div className="w-16 h-16 bg-[#0c324a] rounded-full flex items-center justify-center mx-auto mb-4">
+          <span className="text-white text-xl font-bold">OA</span>
+        </div>
+        <span className="text-gray-500">Course Image</span>
+      </div>
+    </div>
+  )}
+</div>
             </div>
 
             {/* Right Column - Enrollment Card */}
