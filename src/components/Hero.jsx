@@ -36,15 +36,16 @@ const Hero = () => {
           </div>
 
           {/* Hero Image - Right Side */}
-          <div className="flex-1 order-1 lg:order-2 -mt-20 lg:mt-0">
+          <div className="flex-1 order-1 lg:order-2">
             <div className="relative w-full h-64 md:h-80 lg:h-96 ">
-              <Image
-                src="/assets/hero-bg1.jpg" // Replace with your actual image path
-                alt="Students learning at Ocean Academy"
-                fill
-                className="object-cover rounded-xl"
-                priority
-              />
+           <Image
+    src="/assets/hero-bg1.jpg"
+    alt="Students learning at Ocean Academy"
+    width={600}
+    height={400}
+    className="w-full max-w-md md:max-w-lg h-auto rounded-xl object-cover"
+    priority
+  />
             </div>
           </div>
 
