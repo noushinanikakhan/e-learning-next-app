@@ -20,7 +20,6 @@ const providers = [
       const db = client.db("ocean-academy");
       const usersCollection = db.collection("users");
 
-      // ⚠️ Plain-text password – ONLY for exam/demo
       const user = await usersCollection.findOne({
         email: credentials.email,
         password: credentials.password,
@@ -37,7 +36,6 @@ const providers = [
   }),
 ];
 
-// Add Google only if keys exist (optional)
 if (process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET) {
   providers.push(
     GoogleProvider({
@@ -73,7 +71,6 @@ export const authOptions = {
   },
 };
 
-// ✅ This creates GET/POST handlers directly
 const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };

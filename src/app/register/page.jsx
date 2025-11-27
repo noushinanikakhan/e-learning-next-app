@@ -42,7 +42,6 @@ export default function RegisterPage() {
     }
 
     try {
-      // Call our /api/register route
       const res = await fetch("/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -61,7 +60,6 @@ export default function RegisterPage() {
         return;
       }
 
-      // On success go to login page
       router.push("/login");
     } catch (err) {
       console.error("Registration error:", err);
