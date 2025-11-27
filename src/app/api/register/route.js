@@ -25,7 +25,6 @@ export async function POST(req) {
       );
     }
 
-    // ⚠️ Plain-text password – exam only
     await usersCollection.insertOne({
       name,
       email,

@@ -10,7 +10,6 @@ export default function CoursesPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [loading, setLoading] = useState(true);
 
-  // Fetch courses on component mount
   useEffect(() => {
     async function fetchCourses() {
       try {
@@ -27,11 +26,9 @@ export default function CoursesPage() {
     fetchCourses();
   }, []);
 
-  // Filter courses based on search and category
   useEffect(() => {
     let results = courses;
 
-    // Search filter
     if (searchTerm) {
       results = results.filter(course =>
         course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -40,7 +37,6 @@ export default function CoursesPage() {
       );
     }
 
-    // Category filter
     if (selectedCategory !== 'All') {
       results = results.filter(course => course.category === selectedCategory);
     }
@@ -48,7 +44,6 @@ export default function CoursesPage() {
     setFilteredCourses(results);
   }, [searchTerm, selectedCategory, courses]);
 
-  // Get unique categories for filter
   const categories = ['All', ...new Set(courses.map(course => course.category))];
 
   if (loading) {

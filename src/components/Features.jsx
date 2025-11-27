@@ -10,7 +10,7 @@ export default function FeaturedCourses() {
   useEffect(() => {
     async function fetchCourses() {
       try {
-        // Browser fetch → relative URL is 100% fine:
+
         const res = await fetch("/api/courses");
 
         if (!res.ok) {
@@ -21,7 +21,6 @@ export default function FeaturedCourses() {
 
         const data = await res.json();
 
-        // Handle array OR {courses: [...]}
         const allCourses = Array.isArray(data) ? data : data.courses || data.data || [];
         setFeaturedCourses(allCourses.slice(0, 6));
       } catch (err) {

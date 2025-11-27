@@ -29,7 +29,6 @@ export default function AddCousePage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-      // ✅ Price validation here
   if (!formData.price || isNaN(parseFloat(formData.price))) {
     alert("Invalid price");
     setLoading(false);
@@ -50,7 +49,6 @@ export default function AddCousePage() {
 
       if (response.ok) {
         setShowToast(true);
-        // Reset form
         setFormData({
           title: '',
           shortDescription: '',
@@ -63,7 +61,6 @@ export default function AddCousePage() {
           level: 'Beginner'
         });
         
-        // Hide toast after 3 seconds
         setTimeout(() => {
           setShowToast(false);
           router.push('/courses');
@@ -159,24 +156,6 @@ export default function AddCousePage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Price */}
-              {/* <div>
-                <label htmlFor="price" className="block text-sm font-medium text-gray-700 mb-2">
-                  Price ($) *
-                </label>
-                <input
-                  type="number"
-                  id="price"
-                  name="price"
-                  value={formData.price}
-                  onChange={handleChange}
-                  required
-                  min="0"
-                  step="0.01"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0c324a] focus:border-transparent transition-all"
-                  placeholder="0.00"
-                />
-              </div> */}
               <div>
   <label htmlFor="price" className="block text-sm font-medium text-gray-700 mb-2">
     Price ($) *
@@ -188,11 +167,10 @@ export default function AddCousePage() {
     name="price"
     value={formData.price}
     onChange={(e) => {
-      // allow only digits + one decimal point
       let value = e.target.value.replace(/[^0-9.]/g, "");
       const parts = value.split(".");
       if (parts.length > 2) {
-        value = parts[0] + "." + parts[1]; // keep only first decimal
+        value = parts[0] + "." + parts[1]; 
       }
       setFormData((prev) => ({ ...prev, price: value }));
     }}

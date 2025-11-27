@@ -56,7 +56,7 @@ export default async function DetailsPage({ params }) {
         </div>
       </div>
 
-      {/* Banner Section - Modified */}
+      {/* Banner Section  */}
       <div className="bg-white">
         <div className="max-w-7xl mx-auto px-4 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -65,7 +65,7 @@ export default async function DetailsPage({ params }) {
               <h1 className="text-4xl font-bold text-[#0c324a] mb-4">{course.title}</h1>
               <p className="text-xl text-gray-600 mb-6">{course.shortDescription}</p>
               
-              {/* Course Image - Contained within white space */}
+              {/* Course Image  */}
          <div className="rounded-2xl overflow-hidden shadow-lg mb-6">
   {course.imageUrl ? (
     <div className="h-80 w-full">
@@ -88,7 +88,7 @@ export default async function DetailsPage({ params }) {
 </div>
             </div>
 
-            {/* Right Column - Enrollment Card */}
+            {/* Right Column */}
             <div className="lg:col-span-1">
               <div className="bg-white rounded-2xl shadow-lg p-6 sticky top-8 border border-gray-200">
                 <div className="text-center mb-6">
@@ -124,7 +124,7 @@ export default async function DetailsPage({ params }) {
         </div>
       </div>
 
-      {/* Full Description Section */}
+      {/* Full Description  */}
       <div className="bg-white border-t border-gray-200">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <h2 className="text-3xl font-bold text-[#0c324a] mb-6">Course Description</h2>

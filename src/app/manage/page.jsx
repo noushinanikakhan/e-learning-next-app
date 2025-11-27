@@ -10,14 +10,14 @@ export default function ManageCoursePage() {
   const { data: session, status } = useSession();
   const router = useRouter();
 
-  // Redirect if not authenticated
+
   useEffect(() => {
     if (status === 'unauthenticated') {
       router.push('/login');
     }
   }, [status, router]);
 
-  // Fetch courses
+
   useEffect(() => {
     if (status === 'authenticated') {
       fetchCourses();
@@ -71,7 +71,7 @@ const handleDelete = async (courseId) => {
   }
 
   if (status === 'unauthenticated') {
-    return null; // Will redirect due to useEffect
+    return null; 
   }
 
   return (

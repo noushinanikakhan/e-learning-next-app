@@ -2,14 +2,14 @@ import clientPromise from '@/lib/mongodb';
 import { NextResponse } from 'next/server';
 import { ObjectId } from 'mongodb';
 
-// GET /api/courses - Get all courses (IMPROVED VERSION)
+
 export async function GET() {
   try {
     const client = await clientPromise;
     const db = client.db('ocean-academy');
     const courses = await db.collection('courses').find({}).toArray();
     
-    // Ensure all courses have required fields
+ 
     const sanitizedCourses = courses.map(course => ({
       _id: course._id,
       title: course.title || 'Untitled Course',
@@ -26,18 +26,18 @@ export async function GET() {
     return NextResponse.json(sanitizedCourses);
   } catch (error) {
     console.error('Error fetching courses:', error);
-    return NextResponse.json([], { status: 200 }); // Return empty array instead of error
+    return NextResponse.json([], { status: 200 }); 
   }
 }
 
-// POST /api/courses - Create new course
+// POST /api/courses -  new course
 export async function POST(request) {
   try {
     const client = await clientPromise;
     const db = client.db('ocean-academy');
     const courseData = await request.json();
     
-    // Add timestamps
+
     courseData.createdAt = new Date();
     courseData.updatedAt = new Date();
     

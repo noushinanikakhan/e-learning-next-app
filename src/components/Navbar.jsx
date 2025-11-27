@@ -10,7 +10,6 @@ const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(event) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -28,9 +27,9 @@ const Navbar = () => {
   return (
     <nav className="bg-[#0c324a] p-4">
       <div className="w-full flex items-center justify-between px-4">
-        {/* LEFT: dropdown (mobile) + logo - YOUR ORIGINAL DESIGN */}
+     
         <div className="flex items-center gap-3">
-          {/* Mobile dropdown - LEFT SIDE */}
+     
           <details className="dropdown md:hidden">
             <summary className="btn btn-ghost text-white appearance-none p-1">
               <svg
@@ -103,7 +102,7 @@ const Navbar = () => {
             </ul>
           </details>
 
-          {/* Logo + Brand - YOUR ORIGINAL */}
+  
           <Link href="/" className="flex items-center gap-2">
             <Image
               src="/assets/logo.png"
@@ -117,7 +116,6 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* CENTER: desktop menu - YOUR ORIGINAL */}
         <div className="hidden md:flex flex-1 justify-center">
           <ul className="flex space-x-8">
             <li>
@@ -175,13 +173,10 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* RIGHT: User dropdown or Login button - UPDATED FOR SESSION */}
         <div className="relative" ref={dropdownRef}>
           {status === "loading" ? (
-            // Loading state - minimal design
             <div className="w-8 h-8 rounded-full bg-gray-300 animate-pulse"></div>
           ) : session ? (
-            // User is logged in - Show dropdown
             <div className="relative">
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -205,7 +200,6 @@ const Navbar = () => {
                 </svg>
               </button>
 
-              {/* Dropdown Menu */}
               {isDropdownOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50 border border-gray-200">
                   <div className="px-4 py-2 border-b border-gray-100">
@@ -241,7 +235,6 @@ const Navbar = () => {
               )}
             </div>
           ) : (
-            // User is not logged in - Show your original login button
             <Link href="/login">
               <button className="rounded-2xl px-2 py-2 lg:px-5 lg:py-2 font-bold bg-[#b3d9ff] text-[#0c324a] hover:bg-[#9ecbff] transition">
                 Login

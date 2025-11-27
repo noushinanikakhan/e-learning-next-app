@@ -1,4 +1,4 @@
-// import Image from "";
+
 
 import FeaturedCourses from "@/components/Features";
 import FreeTrial from "@/components/FreeTrial";

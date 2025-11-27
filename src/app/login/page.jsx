@@ -11,7 +11,6 @@ export default function LoginPage() {
   const [error, setError] = useState('');
   const router = useRouter();
 
-  // Check if user is already logged in
   useEffect(() => {
     const checkSession = async () => {
       const session = await getSession();
@@ -34,7 +33,6 @@ export default function LoginPage() {
         redirect: false,
       });
 
-     // In your login page, replace the error message part:
 if (result?.error) {
   setError('Invalid email or password. Please try again.');
 }

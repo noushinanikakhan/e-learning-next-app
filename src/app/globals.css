@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Remove default triangle/marker from <summary> */
+
 summary::-webkit-details-marker {
   display: none;
 }

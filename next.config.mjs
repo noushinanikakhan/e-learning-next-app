@@ -2,11 +2,10 @@
 const nextConfig = {
   reactCompiler: true,
   images: {
-    // use remotePatterns instead of deprecated `domains`
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'i.ibb.co',          // ✅ keep this
+        hostname: 'i.ibb.co',        
       },
       {
         protocol: 'https',
@@ -19,7 +18,7 @@ const nextConfig = {
     ],
     formats: ['image/webp', 'image/avif'],
   },
-  // ❌ removed `experimental.esmExternals: 'loose'`
+
 };
 
 export default nextConfig;
