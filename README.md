@@ -3,7 +3,7 @@
 *A full-stack e-learning platform built entirely with Next.js 16 API Routes*
 
 **Live Demo:** [https://e-learning-next-app.vercel.app](https://e-learning-next-app.vercel.app)  
-**GitHub:** [\[Your Repository Link\]](https://github.com/noushinanikakhan/e-learning-next-app)
+**GitHub:** (https://github.com/noushinanikakhan/e-learning-next-app)
 
 ---
 
@@ -70,7 +70,8 @@ Ocean Academy is a **full-stack application built entirely with Next.js 16**, us
 ## 📦 Dependencies (Actual)
 
 ### Core Dependencies
-```json
+```
+json
 {
   "next": "16.0.4",
   "react": "19.2.0",
@@ -81,7 +82,8 @@ Ocean Academy is a **full-stack application built entirely with Next.js 16**, us
 ```
 
 ### Development & Styling
-```json
+```
+json
 {
   "tailwindcss": "3.4.18",
   "daisyui": "5.5.5",
@@ -98,8 +100,8 @@ Ocean Academy is a **full-stack application built entirely with Next.js 16**, us
 - MongoDB database (Atlas recommended)
 - Google Cloud Console account (for OAuth)
 
-### Installation & Setup
-1. Clone and Install
+## Installation & Setup
+### 1. Clone and Install
 ```bash
 git clone https://github.com/your-username/e-learning-next-app.git
 cd e-learning-next-app
@@ -108,7 +110,8 @@ npm install
 
 ### 2. Environment Configuration
 Create .env.local:
-```env
+```
+env
 # Next.js 16 & Authentication
 NEXTAUTH_URL=http://localhost:3000
 NEXTAUTH_SECRET=your-super-secret-nextauth-key
@@ -121,16 +124,18 @@ GOOGLE_CLIENT_SECRET=your-google-client-secret
 MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/ocean-academy
 ```
 
-3. Start Development Server
-```bash
+### 3. Start Development Server
+```
+bash
 npm run dev
 ```
 
-4. Access Application
+### 4. Access Application
 Open http://localhost:3000
 
 ## 🗂️ Project Structure (Next.js 16 Full-Stack)
-```text
+```
+text
 e-learning-next-app/
 ├── app/                    # Next.js 16 App Router (Frontend)
 │   ├── api/               # ✅ BACKEND: API Routes
@@ -157,24 +162,27 @@ e-learning-next-app/
 └── types/               # TypeScript types
 ```
 
-## 🛣️ API Routes Summary 
-### Authentication API
-Endpoint	Methods	Description
-/api/auth/[...nextauth]	GET, POST	NextAuth.js handlers (Google + Credentials)
-/api/auth/session	GET	Get current user session
-/api/auth/csrf	GET	CSRF token for forms
+## 🛣️ API Routes Summary (Your Backend)
 
-### Courses API (Full CRUD)
-Endpoint	Methods	Description
-/api/courses	GET	Fetch all courses
-/api/courses	POST	Create new course
-/api/courses	DELETE	Delete course (with ?id=)
-Future: /api/courses/[id]	PUT, PATCH	Update course
+### 🔐 Authentication API
+| Endpoint | Methods | Description |
+|----------|---------|-------------|
+| `/api/auth/[...nextauth]` | GET, POST | NextAuth.js handlers (Google + Credentials) |
+| `/api/auth/session` | GET | Get current user session |
+| `/api/auth/csrf` | GET | CSRF token for forms |
 
-### User Management API
+### 📚 Courses API (Full CRUD)
+| Endpoint | Methods | Description |
+|----------|---------|-------------|
+| `/api/courses` | **GET** | Fetch all courses |
+| `/api/courses` | **POST** | Create new course |
+| `/api/courses` | **DELETE** | Delete course (with ?id=) |
+| *Future: `/api/courses/[id]`* | PUT, PATCH | Update course |
 
-Endpoint	Methods	Description
-/api/register	POST	User registration
+### 👥 User Management API
+| Endpoint | Methods | Description |
+|----------|---------|-------------|
+| `/api/register` | **POST** | User registration |
 
 ## 🔧 API Route Examples
 ### Courses API (/app/api/courses/route.js)
@@ -183,18 +191,22 @@ Endpoint	Methods	Description
 ### Single Command Deployment
 Everything deploys together:
 # Build and deploy full-stack application
+```
+bash
 vercel --prod
+```
 
 ### Vercel Configuration
--Build Command: next build
+-**Build Command:** next build
 
--Output Directory: .next
+-**Output Directory:** .next
 
--Framework Preset: Next.js
+-**Framework Preset:** Next.js
 
 ### Environment Variables in Vercel
 Set these in your Vercel project settings:
-```env
+```
+env
 NEXTAUTH_URL=https://your-app.vercel.app
 NEXTAUTH_SECRET=your-production-secret
 MONGODB_URI=your-production-mongodb-uri
@@ -221,7 +233,8 @@ GOOGLE_CLIENT_SECRET=your-production-client-secret
 
 ## 🔄 Frontend-Backend Communication
 ### Fetching Courses (Frontend)
-```javascript
+```
+javascript
 // In your React components
 const fetchCourses = async () => {
   const response = await fetch('/api/courses');
@@ -231,7 +244,8 @@ const fetchCourses = async () => {
 ```
 
 ### Creating Courses (Frontend)
-```javascript
+```
+javascript
 const createCourse = async (courseData) => {
   const response = await fetch('/api/courses', {
     method: 'POST',
@@ -244,21 +258,24 @@ const createCourse = async (courseData) => {
 
 ## 🛠️ Development Workflow
 ### Local Development
-```json
+```
+json
 npm run dev
 # Frontend: http://localhost:3000
 # API Routes: http://localhost:3000/api/courses
 ```
 
 ## Production Build
-```bash
+```
+bash
 npm run build
 npm start
 ```
 
-## API Testing
+### API Testing
 Test your API routes directly:
-```bash
+```
+bash
 # Test courses API
 curl http://localhost:3000/api/courses
 
@@ -286,7 +303,8 @@ Common API Route Issues
 4. **Cold Starts:** Normal for serverless functions
 
 ### MongoDB Connection
-```javascript
+```
+javascript
 // Always use the connection pattern from lib/mongodb.js
 import clientPromise from '@/lib/mongodb';
 
