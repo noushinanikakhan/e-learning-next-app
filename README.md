@@ -3,7 +3,7 @@
 *A full-stack e-learning platform built entirely with Next.js 16 API Routes*
 
 **Live Demo:** [https://e-learning-next-app.vercel.app](https://e-learning-next-app.vercel.app)  
-**GitHub:** (https://github.com/noushinanikakhan/e-learning-next-app)
+**GitHub:** https://github.com/noushinanikakhan/e-learning-next-app
 
 ---
 
