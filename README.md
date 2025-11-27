@@ -67,7 +67,7 @@ Ocean Academy is a **full-stack application built entirely with Next.js 16**, us
 
 ---
 
-## 📦 Dependencies (Actual)
+## 📦 Dependencies 
 
 ### Core Dependencies
 ```
@@ -184,15 +184,14 @@ e-learning-next-app/
 |----------|---------|-------------|
 | `/api/register` | **POST** | User registration |
 
-## 🔧 API Route Examples
-### Courses API (/app/api/courses/route.js)
 
 ## 🚀 Deployment on Vercel
 ### Single Command Deployment
 Everything deploys together:
-# Build and deploy full-stack application
+
 ```
 bash
+Build and deploy full-stack application
 vercel --prod
 ```
 
